@@ -2,6 +2,7 @@ package com.example.mealsapp.navigation
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -13,6 +14,7 @@ import com.example.mealsapp.screens.MealsDetails
 import com.example.mealsapp.screens.MealsHome
 import com.example.mealsapp.screens.SplashScreen
 
+@ExperimentalComposeUiApi
 @ExperimentalCoilApi
 @ExperimentalAnimationApi
 @Composable
@@ -22,7 +24,9 @@ fun MealsNavigation() {
         startDestination = MealsScreens.SplashScreen.name ){
 
         composable(MealsScreens.SplashScreen.name) {
-            SplashScreen(navController = navController)
+          SplashScreen(navController = navController)
+
+
         }
         composable(MealsScreens.CatalogScreen.name) {
             MealsHome(navController = navController)

@@ -38,7 +38,11 @@ fun SplashScreen(navController: NavController) {
         )
         delay(2000L)
 
-        navController.navigate(MealsScreens.CatalogScreen.name)
+        navController.navigate(MealsScreens.CatalogScreen.name){
+            popUpTo(MealsScreens.SplashScreen.name){
+                inclusive = true
+            }
+        }
 
 
 
